@@ -54,18 +54,30 @@ export default [
     component: () => import('@/views/articles/Create'),
     meta: { auth: true }
   },
-  // Content
-  {
-    //:articleId 以冒号开头，代表的是该项参数是动态的，它能匹配任何值，比如 1、2、3 或者任何非数字字符
-    path: '/articles/:articleId/content',
-    name: 'Content',
-    component: () => import('@/views/articles/Content.vue')
-  },
   // Edit
   {
     path: '/articles/:articleId/edit',
     name: 'Edit',
     component: () => import('@/views/articles/Create'),
     meta: { auth: true }
+  },
+  // Column
+  {
+    path: '/:user',
+    component: () => import('@/views/articles/Column'),
+    children: [
+      {
+        path: '',
+        name: 'Column',
+        component: () => import('@/views/articles/List.vue')
+      },
+      // Content
+      {
+        //:articleId 以冒号开头，代表的是该项参数是动态的，它能匹配任何值，比如 1、2、3 或者任何非数字字符
+        path: '/articles/:articleId/content',
+        name: 'Content',
+        component: () => import('@/views/articles/Content.vue')
+      }
+    ]
   },
 ]
