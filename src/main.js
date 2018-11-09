@@ -41,7 +41,8 @@ const AddMockData = (() => {
 
   if (isAddMockData) {
     // 合并用户数据和测试数据，使用合并值作为所有文章
-    store.commit('UPDATE_ARTICLES', [...userArticles, ...mockArticles(10)])
+    // 生成 60 条测试数据
+    store.commit('UPDATE_ARTICLES', [...userArticles, ...mockArticles(50)])
   } else {
     // 使用用户数据作为所有文章
     store.commit('UPDATE_ARTICLES', userArticles)
