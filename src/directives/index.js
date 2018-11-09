@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import validator from './validator'
 import dropdown from './dropdown'
+// 引入 title.js 的默认值
+import title from './title'
 
 //注册指令
 //Vue.directive('validator', validator)
 
 const directives = {
   validator,
-  dropdown
+  dropdown,
+  // 添加 title 以便在循环中进行注册
+  title
 }
 
 //使用一个循环，来注册我们的所有指令
