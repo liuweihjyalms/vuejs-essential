@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/vuejs-liuwei/dist/',
+    assetsPublicPath: '/vuejs-essential/dist/',
     //assetsPublicPath: location.origin.indexOf('github.io') !== -1 ? `${location.origin}/vuejs-liuwei/dist` : location.origin ,
 
     /**
